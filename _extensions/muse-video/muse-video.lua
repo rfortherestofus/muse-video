@@ -7,9 +7,9 @@ return {
 
     if with_transcript == 'true' then
       html_transcript_content = string.format([[
-        <details class="container-transcript" style="margin-top:20px;font-size:larger;">
+        <details class="container-transcript" style="margin:20px;">
           <summary>Transcript</summary>
-          <div id="transcript-list-%s" style="height:200px; overflow-y:scroll;">
+          <div id="transcript-list-%s" style="height:250px; overflow-y:scroll; color: rgba(33, 37, 41, .75);">
               <table><tbody id="speech-container-%s"></tbody></table>
           </div>
         </details>
