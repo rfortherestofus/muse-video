@@ -28,7 +28,6 @@ return {
             document.querySelectorAll('#transcript-list-%s .word').forEach(function(word) {
               if (Number.parseFloat(word.dataset.start) <= time && Number.parseFloat(word.dataset.end) > time) {
                 word.classList.add('current');
-                word.scrollIntoView({behavior: "smooth", block: "center", inline: "end"});
               } else if (word.classList.contains('current')) {
                 word.classList.remove('current');
               }
@@ -87,38 +86,6 @@ return {
             if (speechContainer && e.target.classList.contains('word')) {
               player_%s.seek(Number.parseFloat(e.target.dataset.start));
               player_%s.play();
-            }
-          });
-
-          let isScrollActive_%s = false;
-          const onScroll_%s = () => {
-            const containerVideo = document.getElementById('transcript-list-%s');
-            const scroll = containerVideo.scrollTop;
-            if (scroll > 70) {
-              containerVideo.classList.add('scrolled');
-            } else {
-              containerVideo.classList.remove('scrolled');
-            }
-          }
-          // Enable scroll listener when playing
-          player_%s.on('Play', () => {
-            if (!isScrollActive_%s) {
-              window.addEventListener('scroll', onScroll_%s);
-              isScrollActive_%s = true;
-            }
-          });
-          // Optional: Disable scroll listener when paused/stopped
-          player_%s.on('Pause', () => {
-            if (isScrollActive_%s) {
-              window.removeEventListener('scroll', onScroll_%s);
-              isScrollActive_%s = false;
-            }
-          });
-
-          player_%s.on('Ended', () => {
-            if (isScrollActive_%s) {
-              window.removeEventListener('scroll', onScroll_%s);
-              isScrollActive_%s = false;
             }
           });
         </script>
