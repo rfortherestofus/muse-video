@@ -1,0 +1,16 @@
+---
+title: "Muse-Video Example"
+---
+
+## One Video
+
+{{< muse-video VBdrD8v >}}
+
+## And here's another one with transcript
+
+{{< muse-video FTBViRx with_transcript=true >}}
+
+## And here's one more
+
+{{< muse-video R7c1PrQ with_transcript=true >}}
+
