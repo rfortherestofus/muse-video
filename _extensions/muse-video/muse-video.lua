@@ -133,6 +133,8 @@ return {
         const player_%s = MusePlayer({
           container: '#video-player-%s',
           video: svid_%s,
+          logo: false,
+          resume: true,
           width: 'parent',
           showTitle: false,
         });
